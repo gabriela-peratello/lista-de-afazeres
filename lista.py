@@ -2,6 +2,7 @@
 
 tarefas = []
 tarefas_feitas = []
+cont = 0
 
 while True:
 
@@ -35,15 +36,15 @@ while True:
     elif escolha == 2:
                 print ("Beleza! Essas são as tarefas que você separou:")
                 for item in tarefas:
-                        print("-", item["tarefa"])
+                        print(item["tarefa"])
                 input("\nPressione Enter para voltar ao menu...") #\n = quebra de linha
     elif escolha == 3:
-                tarefas_feitas = input("Legal! Qual tarefa você finalizou?")
-                tarefas.remove(tarefas_feitas)
-                print(f"Tarefa '{tarefas_feitas}' marcada como concluída!")
-   
+               tarefa_concluir = int(input("Qual tarefa voceê concluiu?")) + "[FEITO]"
+               tarefas[tarefa_concluir] = tarefas [tarefa_concluir]
     elif escolha == 4:
-                print("vc escolheu 4")
+                tarefa_excluir = int(input("Quak tarefa você deseja excluir?"))
+                tarefas.pop(tarefa_excluir)
+                
     elif escolha == 0:
                 print("Saindo...")
                 break

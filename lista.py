@@ -1,6 +1,6 @@
 #LISTA DE TAREFAS (REVISÃO)
 from manipulacao import Manipulacao
-
+confere = []
 tarefas = []
 dever = []
 cont = 0
@@ -42,21 +42,21 @@ while True:
                 input("\nPressione Enter para voltar ao menu...") #\n = quebra de linha
 
     elif escolha == 3:
-           len (tarefas)
-           dever_feito = input("Qual tarefa você concluiu?")
-           tarefas[dever_feito] = tarefas[dever_feito] + "[Concluído]"
-                        
+        print("---Marcar como Concluído!---")
+        conferir = input("Qual tarefa você concluiu?")
+        confere.append(f"[x]{conferir}")
+        print(f"Tarefa '{conferir}' concluída com sucesso.")
+
     elif escolha == 4:
-        tarefa_feita = int(input("Qual tarefa você deseja excluir?"))
-        tarefas.pop(tarefa_feita)          
-                          
+        pergunta = input("Qual tarefa você quer remover?")
+        tarefas.remove(pergunta)
+        print(f"Tarefa {pergunta} removida.")
     elif escolha == 0:
-                print("Saindo...")
-                #manipulacao.salvar_dever(tarefas.)
+                with open("main.txt", "w") as arquivo:
+                       for tarefa in tarefas :
+                        arquivo.write(tarefa + "\n")
+                        print("lista salva!")
                 break
     else:
                 print("Essa opção não está disponível!")
                 break
-
-#tarefa_feita = int(input("Qual tarefa você deseja excluir?"))
-                #tarefas.pop(tarefa_feita)               
